@@ -3,19 +3,22 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async event => {
       event.preventDefault();
   
-      const data = Object.fromEntries(new FormData(form))
+    //   const data = Object.fromEntries(new FormData(form))
       const fetchOptions = {
         method: 'post',
-        body: data,
-        headers: {
-          'Content-Type': 'application/json',
+       
+        body: new FormData(form),
+        credentials:'include',
+        // headers: {
+        //   'Content-Type': 'application/json',
         }
-      };
+      
       const url = 'http://localhost:8000/login/';
       const response = await fetch(url, fetchOptions);
       if (response.ok) {
         window.location.href = '/';
       } else {
+        console.log(fetchOptions)
         console.error(response);
       }
     });

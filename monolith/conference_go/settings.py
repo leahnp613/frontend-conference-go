@@ -25,6 +25,15 @@ SECRET_KEY = (
     "django-insecure-69!6993t79&4n&va6t@3(s8a$o3a37!9+0qtvt#j%o&cz=o==)"
 )
 
+DJWTO_MODE = "TWO-COOKIES"
+
+DJWTO_ACCESS_TOKEN_LIFETIME = None
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+CORS_ALLOW_CREDENTIALS = True
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -49,6 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "djwto",
 ]
 
 MIDDLEWARE = [

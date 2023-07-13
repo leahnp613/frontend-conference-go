@@ -12,6 +12,13 @@ window.addEventListener('DOMContentLoaded', async () => {
         option.innerHTML = conference.name;
         selectTag.appendChild(option);
       }
+
+      const loadingIcon = document.getElementById('loading-conference-spinner');
+      loadingIcon.classList.add('d-none');
+      selectTag.classList.remove('d-none');
+
+
+
     }
   
   });
